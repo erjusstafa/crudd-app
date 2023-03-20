@@ -37,7 +37,7 @@ export const CustomDialog = ({ children }: Props) => {
   };
 
   return (
-    <div>
+    <div style={{height : "10vh"}}>
       <Dialog
         open={open}
         onClose={() => handleExit()}

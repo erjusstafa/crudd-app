@@ -2,7 +2,7 @@ import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 import { CustomDialog } from '../CustomDialog';
 import { FavoriteTable } from './FavoriteTable';
-/* import FavoriteIcon from '@mui/icons-material/Favorite'; */
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { dialogOpenSubject$ } from '../CustomDialog/CustomDialog';
 import { useSelector } from 'react-redux';
 import { AppStore } from '@/redux/store';
@@ -27,8 +27,11 @@ const Navbar: React.FC<NavbarInterface> = () => {
             Gentleman Programming React TEST
           </Typography>
           <IconButton color="secondary" aria-label="favorites" component="label" onClick={handleClick}>
-          ❤️
+          <FavoriteIcon/>
           </IconButton>
+          <Typography style={{marginBottom:"10px"}}>
+            {stateFavorites.length < 1 ? null : stateFavorites.length }
+          </Typography>
         </Toolbar>
       </AppBar>
     </>
